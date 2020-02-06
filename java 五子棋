@@ -37,3 +37,19 @@ public ChessFrame() {
    this.setResizable(false);
    this.addWindowListener(new ChessWindowEvent());
    MapSize(20,15);
+ JMenuBar mbar = new JMenuBar();
+   this.setJMenuBar(mbar);
+   JMenu gameMenu = new JMenu("游戏");
+   mbar.add(makeMenu(gameMenu, new Object[] {
+    "开局", "棋盘","模式", null, "退出"
+    }, this));
+   JMenu lookMenu =new JMenu("视图");
+   mbar.add(makeMenu(lookMenu,new Object[] {
+    "Metal","Motif","Windows"
+    },this));
+   JMenu helpMenu = new JMenu("帮助");
+   mbar.add(makeMenu(helpMenu, new Object[] {
+    "关于"
+   }, this));
+}
+
