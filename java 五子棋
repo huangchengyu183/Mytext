@@ -27,3 +27,13 @@ public static boolean iscomputer=true,checkcomputer=true;
 private int width,height;
 private ChessModel cm;
 private MainPanel mp;
+//构造五子棋游戏的主窗体
+public ChessFrame() {
+   this.setTitle("五子棋游戏");
+   cm=new ChessModel(1);
+   mp=new MainPanel(cm);
+   Container con=this.getContentPane();
+   con.add(mp,"Center");
+   this.setResizable(false);
+   this.addWindowListener(new ChessWindowEvent());
+   MapSize(20,15);
